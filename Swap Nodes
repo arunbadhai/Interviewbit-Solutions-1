@@ -7,15 +7,20 @@
  * };
  */
 ListNode* Solution::swapPairs(ListNode* A) {
-    ListNode *p=A,*q=A->next;
-    int temp;
     if(A==NULL||A->next==NULL) return A;
-    while(q){
-        temp=p->val;
-        p->val=q->val;
-        q->val=temp;
-        p=q->next;
-        q=p?p->next:0;
+    ListNode *cur=A,*nxt=A->next;
+    int temp;
+    while(nxt){
+        temp=cur->val;
+        cur->val=nxt->val;
+        nxt->val=temp;
+        cur=nxt->next;
+        nxt=cur?cur->next:0;
     }
     return A;
 }
+/*explanation:
+    Take two pointers one is to point to 1st node and another one to point to next node.
+    swap both data values/addresses.Then take change first pointer such that first=second->next;
+    Take second as first->next if both are same else take as NULL;
+*/
