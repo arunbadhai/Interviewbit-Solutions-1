@@ -16,7 +16,7 @@ vector<TreeNode*> Getall(int start,int end){
     for(int i=start;i<=end;i++){
         vector<TreeNode*> lefty=Getall(start,i-1);
         vector<TreeNode*> righty=Getall(i+1,end);
-        for(TreeNode* left:lefty){
+        for(TreeNode* left:lefty){//For every Node of Left Subtree.
             for(TreeNode* right:righty){
                 TreeNode* node=new TreeNode(i);
                 node->left=left;
