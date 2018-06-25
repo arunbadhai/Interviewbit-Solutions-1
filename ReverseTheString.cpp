@@ -7,7 +7,6 @@ void Solution::reverseWords(string &A) {
     stack<int> s;
     int n=A.length()-1;
     int i=n;
-    while(A[i]==' ') i--;
     while(i>=0){
         if(A[i]==' '){
             while(!s.empty()){
@@ -16,11 +15,10 @@ void Solution::reverseWords(string &A) {
             }
             st.push_back(' ');
         }
-        else{
-            s.push(A[i]);
-        }
+        else s.push(A[i]);
         i--;
     }
+    //Get the remaining elements from stack
     while(!s.empty()){
         st.push_back(s.top());
         s.pop();
