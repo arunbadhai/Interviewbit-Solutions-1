@@ -1,2 +1,0 @@
-# santhoshprofile
-practice repository
